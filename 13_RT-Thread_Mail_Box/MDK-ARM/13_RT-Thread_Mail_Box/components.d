@@ -1,0 +1,11 @@
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/components.c
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rthw.h
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h
+13_rt-thread_mail_box\components.o: ../Inc/rtconfig.h
+13_rt-thread_mail_box\components.o: .\RTE\_13_RT-Thread_Mail_Box\RTE_Components.h
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdebug.h
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdef.h
+13_rt-thread_mail_box\components.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtservice.h
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtm.h
+13_rt-thread_mail_box\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h

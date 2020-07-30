@@ -1,0 +1,11 @@
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/components.c
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rthw.h
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h
+8_rt-thread_message_queue\components.o: ../Inc/rtconfig.h
+8_rt-thread_message_queue\components.o: .\RTE\_8_RT-Thread_Message_Queue\RTE_Components.h
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdebug.h
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdef.h
+8_rt-thread_message_queue\components.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtservice.h
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtm.h
+8_rt-thread_message_queue\components.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h
