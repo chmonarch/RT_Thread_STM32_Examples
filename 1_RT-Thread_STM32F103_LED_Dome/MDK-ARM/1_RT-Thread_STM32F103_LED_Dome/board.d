@@ -1,0 +1,12 @@
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/bsp/board.c
+1_rt-thread_stm32f103_led_dome\board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rthw.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Inc/rtconfig.h
+1_rt-thread_stm32f103_led_dome\board.o: .\RTE\_1_RT-Thread_STM32F103_LED_Dome\RTE_Components.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdebug.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdef.h
+1_rt-thread_stm32f103_led_dome\board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtservice.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtm.h
+1_rt-thread_stm32f103_led_dome\board.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h

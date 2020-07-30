@@ -117,7 +117,7 @@
 // <h>Memory Management Configuration
 // <c1>Dynamic Heap Management
 //  <i>Dynamic Heap Management
-#define RT_USING_HEAP
+//#define RT_USING_HEAP
 // </c>
 // <c1>using small memory
 //  <i>using small memory
@@ -141,42 +141,6 @@
 //  <i>Default: 128  (128Byte)
 #define RT_CONSOLEBUF_SIZE 128
 // </h>
-
-// <h>Finsh Configuration
-#if defined(RT_USING_FINSH)
-// <c1>Using Msh Shell
-//  <i>Using Msh Shell
-#define FINSH_USING_MSH
-// </c>
-
-// <c1>Only using Msh Shell
-//  <i>Only using Msh Shell
-#define FINSH_USING_MSH_ONLY
-// </c>
-
-// <o>the priority of finsh thread <1-7>
-//  <i>the priority of finsh thread
-//  <i>Default: 6
-#define __FINSH_THREAD_PRIORITY     5
-#define FINSH_THREAD_PRIORITY       (RT_THREAD_PRIORITY_MAX / 8 * __FINSH_THREAD_PRIORITY + 1)
-
-// <o>the stack of finsh thread <1-4096>
-//  <i>the stack of finsh thread
-//  <i>Default: 512  (512Byte)
-#define FINSH_THREAD_STACK_SIZE     512
-
-// <o>the history lines of finsh thread <1-32>
-//  <i>the history lines of finsh thread
-//  <i>Default: 5
-#define FINSH_HISTORY_LINES         1
-
-// <c1>Using symbol table in finsh shell
-//  <i>Using symbol table in finsh shell
-#define FINSH_USING_SYMTAB
-// </c>
-// </h>
-
-#endif //RT_USING_FINSH
 
 // <<< end of configuration section >>>
 

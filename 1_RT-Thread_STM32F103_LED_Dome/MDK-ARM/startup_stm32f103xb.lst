@@ -462,12 +462,12 @@ ARM Macro Assembler    Page 8
               00000000 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=rt-thread_led_dome\startup_stm32f103xb.d -ort-thread_led_dome\star
-tup_stm32f103xb.o -I.\RTE\_RT-Thread_LED_Dome -IC:\Keil_v5\Arm\Packs\ARM\CMSIS\
-5.6.0\CMSIS\Core\Include -IC:\Keil_v5\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device
-\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 52
-9" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --list=startup_
-stm32f103xb.lst startup_stm32f103xb.s
+ork --depend=1_rt-thread_stm32f103_led_dome\startup_stm32f103xb.d -o1_rt-thread
+_stm32f103_led_dome\startup_stm32f103xb.o -I.\RTE\_1_RT-Thread_STM32F103_LED_Do
+me -IC:\Keil_v5\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include -IC:\Keil_v5\Arm\P
+acks\Keil\STM32F1xx_DFP\2.1.0\Device\Include --predefine="__MICROLIB SETA 1" --
+predefine="__UVISION_VERSION SETA 529" --predefine="_RTE_ SETA 1" --predefine="
+STM32F10X_MD SETA 1" --list=startup_stm32f103xb.lst startup_stm32f103xb.s
 
 
 
