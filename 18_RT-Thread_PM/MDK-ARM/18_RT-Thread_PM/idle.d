@@ -1,0 +1,11 @@
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/src/idle.c
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rthw.h
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h
+18_rt-thread_pm\idle.o: ../Inc/rtconfig.h
+18_rt-thread_pm\idle.o: .\RTE\_18_RT-Thread_PM\RTE_Components.h
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdebug.h
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtdef.h
+18_rt-thread_pm\idle.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtservice.h
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtm.h
+18_rt-thread_pm\idle.o: ../Middlewares/Third_Party/RealThread_RTOS_RT-Thread/include/rtthread.h

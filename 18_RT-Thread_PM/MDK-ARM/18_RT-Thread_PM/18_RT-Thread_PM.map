@@ -1,0 +1,998 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(STACK) for __initial_sp
+    startup_stm32f103xb.o(RESET) refers to startup_stm32f103xb.o(.text) for Reset_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.NMI_Handler) for NMI_Handler
+    startup_stm32f103xb.o(RESET) refers to context_rvds.o(.text) for HardFault_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.MemManage_Handler) for MemManage_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.BusFault_Handler) for BusFault_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.SVC_Handler) for SVC_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_stm32f103xb.o(RESET) refers to board.o(i.SysTick_Handler) for SysTick_Handler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.DMA1_Channel4_IRQHandler) for DMA1_Channel4_IRQHandler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.DMA1_Channel5_IRQHandler) for DMA1_Channel5_IRQHandler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.USART1_IRQHandler) for USART1_IRQHandler
+    startup_stm32f103xb.o(RESET) refers to stm32f1xx_it.o(i.EXTI15_10_IRQHandler) for EXTI15_10_IRQHandler
+    startup_stm32f103xb.o(.text) refers to system_stm32f1xx.o(i.SystemInit) for SystemInit
+    startup_stm32f103xb.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(i.SystemClock_Config) refers to memseta.o(.text) for __aeabi_memclr4
+    main.o(i.SystemClock_Config) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_OscConfig) for HAL_RCC_OscConfig
+    main.o(i.SystemClock_Config) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
+    main.o(i.main) refers to stm32f1xx_hal.o(i.HAL_Init) for HAL_Init
+    main.o(i.main) refers to main.o(i.SystemClock_Config) for SystemClock_Config
+    main.o(i.main) refers to gpio.o(i.MX_GPIO_Init) for MX_GPIO_Init
+    main.o(i.main) refers to dma.o(i.MX_DMA_Init) for MX_DMA_Init
+    main.o(i.main) refers to usart.o(i.MX_USART1_UART_Init) for MX_USART1_UART_Init
+    gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+    gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+    gpio.o(i.MX_GPIO_Init) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
+    dma.o(i.MX_DMA_Init) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+    dma.o(i.MX_DMA_Init) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
+    usart.o(i.HAL_UART_MspDeInit) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
+    usart.o(i.HAL_UART_MspDeInit) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_DeInit) for HAL_DMA_DeInit
+    usart.o(i.HAL_UART_MspDeInit) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_DisableIRQ) for HAL_NVIC_DisableIRQ
+    usart.o(i.HAL_UART_MspInit) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    usart.o(i.HAL_UART_MspInit) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Init) for HAL_DMA_Init
+    usart.o(i.HAL_UART_MspInit) refers to main.o(i.Error_Handler) for Error_Handler
+    usart.o(i.HAL_UART_MspInit) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+    usart.o(i.HAL_UART_MspInit) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
+    usart.o(i.HAL_UART_MspInit) refers to usart.o(.bss) for .bss
+    usart.o(i.MX_USART1_UART_Init) refers to stm32f1xx_hal_uart.o(i.HAL_UART_Init) for HAL_UART_Init
+    usart.o(i.MX_USART1_UART_Init) refers to main.o(i.Error_Handler) for Error_Handler
+    usart.o(i.MX_USART1_UART_Init) refers to usart.o(.bss) for .bss
+    stm32f1xx_it.o(i.DMA1_Channel4_IRQHandler) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_IRQHandler) for HAL_DMA_IRQHandler
+    stm32f1xx_it.o(i.DMA1_Channel4_IRQHandler) refers to usart.o(.bss) for hdma_usart1_tx
+    stm32f1xx_it.o(i.DMA1_Channel5_IRQHandler) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_IRQHandler) for HAL_DMA_IRQHandler
+    stm32f1xx_it.o(i.DMA1_Channel5_IRQHandler) refers to usart.o(.bss) for hdma_usart1_rx
+    stm32f1xx_it.o(i.EXTI15_10_IRQHandler) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler) for HAL_GPIO_EXTI_IRQHandler
+    stm32f1xx_it.o(i.USART1_IRQHandler) refers to stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) for HAL_UART_IRQHandler
+    stm32f1xx_it.o(i.USART1_IRQHandler) refers to usart.o(.bss) for huart1
+    stm32f1xx_hal.o(i.HAL_DeInit) refers to stm32f1xx_hal.o(i.HAL_MspDeInit) for HAL_MspDeInit
+    stm32f1xx_hal.o(i.HAL_Delay) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal.o(i.HAL_Delay) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal.o(i.HAL_GetTick) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal.o(i.HAL_GetTickFreq) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal.o(i.HAL_GetTickPrio) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal.o(i.HAL_IncTick) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal.o(i.HAL_Init) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping) for HAL_NVIC_SetPriorityGrouping
+    stm32f1xx_hal.o(i.HAL_Init) refers to stm32f1xx_hal.o(i.HAL_InitTick) for HAL_InitTick
+    stm32f1xx_hal.o(i.HAL_Init) refers to stm32f1xx_hal_msp.o(i.HAL_MspInit) for HAL_MspInit
+    stm32f1xx_hal.o(i.HAL_InitTick) refers to stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_Config) for HAL_SYSTICK_Config
+    stm32f1xx_hal.o(i.HAL_InitTick) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+    stm32f1xx_hal.o(i.HAL_InitTick) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal.o(i.HAL_InitTick) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal.o(i.HAL_SetTickFreq) refers to stm32f1xx_hal.o(i.HAL_InitTick) for HAL_InitTick
+    stm32f1xx_hal.o(i.HAL_SetTickFreq) refers to stm32f1xx_hal.o(.data) for .data
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_GetSysClockFreq) for HAL_RCC_GetSysClockFreq
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) refers to stm32f1xx_hal.o(i.HAL_InitTick) for HAL_InitTick
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) refers to system_stm32f1xx.o(.constdata) for AHBPrescTable
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_ClockConfig) refers to stm32f1xx_hal.o(.data) for uwTickPrio
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_DeInit) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_DeInit) refers to stm32f1xx_hal.o(i.HAL_InitTick) for HAL_InitTick
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_DeInit) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_DeInit) refers to stm32f1xx_hal.o(.data) for uwTickPrio
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_GetHCLKFreq) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK1Freq) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK1Freq) refers to system_stm32f1xx.o(.constdata) for APBPrescTable
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq) refers to system_stm32f1xx.o(.constdata) for APBPrescTable
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_MCOConfig) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_NMI_IRQHandler) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_CSSCallback) for HAL_RCC_CSSCallback
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_OscConfig) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_rcc.o(i.HAL_RCC_OscConfig) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    stm32f1xx_hal_rcc_ex.o(i.HAL_RCCEx_GetPeriphCLKFreq) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq) for HAL_RCC_GetPCLK2Freq
+    stm32f1xx_hal_rcc_ex.o(i.HAL_RCCEx_PeriphCLKConfig) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32f1xx_hal_gpio.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
+    stm32f1xx_hal_dma.o(i.HAL_DMA_PollForTransfer) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_dma.o(i.HAL_DMA_Start) refers to stm32f1xx_hal_dma.o(i.DMA_SetConfig) for DMA_SetConfig
+    stm32f1xx_hal_dma.o(i.HAL_DMA_Start_IT) refers to stm32f1xx_hal_dma.o(i.DMA_SetConfig) for DMA_SetConfig
+    stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPriority) refers to stm32f1xx_hal_cortex.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_Config) refers to stm32f1xx_hal_cortex.o(i.__NVIC_SetPriority) for __NVIC_SetPriority
+    stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_IRQHandler) refers to stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_Callback) for HAL_SYSTICK_Callback
+    stm32f1xx_hal_pwr.o(i.HAL_PWR_EnterSTOPMode) refers to stm32f1xx_hal_pwr.o(i.PWR_OverloadWfe) for PWR_OverloadWfe
+    stm32f1xx_hal_pwr.o(i.HAL_PWR_PVD_IRQHandler) refers to stm32f1xx_hal_pwr.o(i.HAL_PWR_PVDCallback) for HAL_PWR_PVDCallback
+    stm32f1xx_hal_flash.o(i.FLASH_Program_HalfWord) refers to stm32f1xx_hal_flash.o(.bss) for .bss
+    stm32f1xx_hal_flash.o(i.FLASH_SetErrorCode) refers to stm32f1xx_hal_flash.o(.bss) for .bss
+    stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) refers to stm32f1xx_hal_flash.o(i.FLASH_SetErrorCode) for FLASH_SetErrorCode
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_GetError) refers to stm32f1xx_hal_flash.o(.bss) for .bss
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler) refers to stm32f1xx_hal_flash.o(i.FLASH_SetErrorCode) for FLASH_SetErrorCode
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler) refers to stm32f1xx_hal_flash.o(i.HAL_FLASH_OperationErrorCallback) for HAL_FLASH_OperationErrorCallback
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler) refers to stm32f1xx_hal_flash.o(i.FLASH_Program_HalfWord) for FLASH_Program_HalfWord
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler) refers to stm32f1xx_hal_flash.o(i.HAL_FLASH_EndOfOperationCallback) for HAL_FLASH_EndOfOperationCallback
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_PageErase) for FLASH_PageErase
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler) refers to stm32f1xx_hal_flash.o(.bss) for .bss
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_OB_Launch) refers to stm32f1xx_hal_cortex.o(i.HAL_NVIC_SystemReset) for HAL_NVIC_SystemReset
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_Program) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_Program) refers to llushr.o(.text) for __aeabi_llsr
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_Program) refers to stm32f1xx_hal_flash.o(i.FLASH_Program_HalfWord) for FLASH_Program_HalfWord
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_Program) refers to stm32f1xx_hal_flash.o(.bss) for .bss
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_Program_IT) refers to stm32f1xx_hal_flash.o(i.FLASH_Program_HalfWord) for FLASH_Program_HalfWord
+    stm32f1xx_hal_flash.o(i.HAL_FLASH_Program_IT) refers to stm32f1xx_hal_flash.o(.bss) for .bss
+    stm32f1xx_hal_flash_ex.o(i.FLASH_MassErase) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_DisableWRP) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_DisableWRP) refers to stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase) for HAL_FLASHEx_OBErase
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_DisableWRP) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_EnableWRP) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_EnableWRP) refers to stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase) for HAL_FLASHEx_OBErase
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_EnableWRP) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_RDP_LevelConfig) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash_ex.o(i.FLASH_OB_RDP_LevelConfig) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.FLASH_PageErase) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_MassErase) for FLASH_MassErase
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_PageErase) for FLASH_PageErase
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase_IT) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_PageErase) for FLASH_PageErase
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase_IT) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_MassErase) for FLASH_MassErase
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase_IT) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_OB_GetRDP) for FLASH_OB_GetRDP
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_OB_RDP_LevelConfig) for FLASH_OB_RDP_LevelConfig
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBGetConfig) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_OB_GetRDP) for FLASH_OB_GetRDP
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_OB_DisableWRP) for FLASH_OB_DisableWRP
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_OB_EnableWRP) for FLASH_OB_EnableWRP
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32f1xx_hal_flash_ex.o(i.FLASH_OB_RDP_LevelConfig) for FLASH_OB_RDP_LevelConfig
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
+    stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32f1xx_hal_flash.o(.bss) for pFlash
+    stm32f1xx_hal_uart.o(i.HAL_HalfDuplex_Init) refers to usart.o(i.HAL_UART_MspInit) for HAL_UART_MspInit
+    stm32f1xx_hal_uart.o(i.HAL_HalfDuplex_Init) refers to stm32f1xx_hal_uart.o(i.UART_SetConfig) for UART_SetConfig
+    stm32f1xx_hal_uart.o(i.HAL_LIN_Init) refers to usart.o(i.HAL_UART_MspInit) for HAL_UART_MspInit
+    stm32f1xx_hal_uart.o(i.HAL_LIN_Init) refers to stm32f1xx_hal_uart.o(i.UART_SetConfig) for UART_SetConfig
+    stm32f1xx_hal_uart.o(i.HAL_MultiProcessor_Init) refers to usart.o(i.HAL_UART_MspInit) for HAL_UART_MspInit
+    stm32f1xx_hal_uart.o(i.HAL_MultiProcessor_Init) refers to stm32f1xx_hal_uart.o(i.UART_SetConfig) for UART_SetConfig
+    stm32f1xx_hal_uart.o(i.HAL_UART_Abort) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort) for HAL_DMA_Abort
+    stm32f1xx_hal_uart.o(i.HAL_UART_Abort) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_GetError) for HAL_DMA_GetError
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort) for HAL_DMA_Abort
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_GetError) for HAL_DMA_GetError
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive_IT) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort_IT) for HAL_DMA_Abort_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive_IT) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceiveCpltCallback) for HAL_UART_AbortReceiveCpltCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive_IT) refers to stm32f1xx_hal_uart.o(i.UART_DMARxOnlyAbortCallback) for UART_DMARxOnlyAbortCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort) for HAL_DMA_Abort
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_GetError) for HAL_DMA_GetError
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit_IT) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort_IT) for HAL_DMA_Abort_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit_IT) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmitCpltCallback) for HAL_UART_AbortTransmitCpltCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit_IT) refers to stm32f1xx_hal_uart.o(i.UART_DMATxOnlyAbortCallback) for UART_DMATxOnlyAbortCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_Abort_IT) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort_IT) for HAL_DMA_Abort_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_Abort_IT) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortCpltCallback) for HAL_UART_AbortCpltCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_Abort_IT) refers to stm32f1xx_hal_uart.o(i.UART_DMATxAbortCallback) for UART_DMATxAbortCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_Abort_IT) refers to stm32f1xx_hal_uart.o(i.UART_DMARxAbortCallback) for UART_DMARxAbortCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_DMAStop) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort) for HAL_DMA_Abort
+    stm32f1xx_hal_uart.o(i.HAL_UART_DMAStop) refers to stm32f1xx_hal_uart.o(i.UART_EndTxTransfer) for UART_EndTxTransfer
+    stm32f1xx_hal_uart.o(i.HAL_UART_DMAStop) refers to stm32f1xx_hal_uart.o(i.UART_EndRxTransfer) for UART_EndRxTransfer
+    stm32f1xx_hal_uart.o(i.HAL_UART_DeInit) refers to usart.o(i.HAL_UART_MspDeInit) for HAL_UART_MspDeInit
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_uart.o(i.UART_Receive_IT) for UART_Receive_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_uart.o(i.UART_EndRxTransfer) for UART_EndRxTransfer
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Abort_IT) for HAL_DMA_Abort_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_uart.o(i.HAL_UART_ErrorCallback) for HAL_UART_ErrorCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_uart.o(i.UART_Transmit_IT) for UART_Transmit_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_uart.o(i.HAL_UART_TxCpltCallback) for HAL_UART_TxCpltCallback
+    stm32f1xx_hal_uart.o(i.HAL_UART_IRQHandler) refers to stm32f1xx_hal_uart.o(i.UART_DMAAbortOnError) for UART_DMAAbortOnError
+    stm32f1xx_hal_uart.o(i.HAL_UART_Init) refers to usart.o(i.HAL_UART_MspInit) for HAL_UART_MspInit
+    stm32f1xx_hal_uart.o(i.HAL_UART_Init) refers to stm32f1xx_hal_uart.o(i.UART_SetConfig) for UART_SetConfig
+    stm32f1xx_hal_uart.o(i.HAL_UART_Receive) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_uart.o(i.HAL_UART_Receive) refers to stm32f1xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout) for UART_WaitOnFlagUntilTimeout
+    stm32f1xx_hal_uart.o(i.HAL_UART_Receive_DMA) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Start_IT) for HAL_DMA_Start_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_Receive_DMA) refers to stm32f1xx_hal_uart.o(i.UART_DMAReceiveCplt) for UART_DMAReceiveCplt
+    stm32f1xx_hal_uart.o(i.HAL_UART_Receive_DMA) refers to stm32f1xx_hal_uart.o(i.UART_DMARxHalfCplt) for UART_DMARxHalfCplt
+    stm32f1xx_hal_uart.o(i.HAL_UART_Receive_DMA) refers to stm32f1xx_hal_uart.o(i.UART_DMAError) for UART_DMAError
+    stm32f1xx_hal_uart.o(i.HAL_UART_Transmit) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    stm32f1xx_hal_uart.o(i.HAL_UART_Transmit) refers to stm32f1xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout) for UART_WaitOnFlagUntilTimeout
+    stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA) refers to stm32f1xx_hal_dma.o(i.HAL_DMA_Start_IT) for HAL_DMA_Start_IT
+    stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA) refers to stm32f1xx_hal_uart.o(i.UART_DMATransmitCplt) for UART_DMATransmitCplt
+    stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA) refers to stm32f1xx_hal_uart.o(i.UART_DMATxHalfCplt) for UART_DMATxHalfCplt
+    stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA) refers to stm32f1xx_hal_uart.o(i.UART_DMAError) for UART_DMAError
+    stm32f1xx_hal_uart.o(i.UART_DMAAbortOnError) refers to stm32f1xx_hal_uart.o(i.HAL_UART_ErrorCallback) for HAL_UART_ErrorCallback
+    stm32f1xx_hal_uart.o(i.UART_DMAError) refers to stm32f1xx_hal_uart.o(i.UART_EndTxTransfer) for UART_EndTxTransfer
+    stm32f1xx_hal_uart.o(i.UART_DMAError) refers to stm32f1xx_hal_uart.o(i.UART_EndRxTransfer) for UART_EndRxTransfer
+    stm32f1xx_hal_uart.o(i.UART_DMAError) refers to stm32f1xx_hal_uart.o(i.HAL_UART_ErrorCallback) for HAL_UART_ErrorCallback
+    stm32f1xx_hal_uart.o(i.UART_DMAReceiveCplt) refers to stm32f1xx_hal_uart.o(i.HAL_UART_RxCpltCallback) for HAL_UART_RxCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMARxAbortCallback) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortCpltCallback) for HAL_UART_AbortCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMARxHalfCplt) refers to stm32f1xx_hal_uart.o(i.HAL_UART_RxHalfCpltCallback) for HAL_UART_RxHalfCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMARxOnlyAbortCallback) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceiveCpltCallback) for HAL_UART_AbortReceiveCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMATransmitCplt) refers to stm32f1xx_hal_uart.o(i.HAL_UART_TxCpltCallback) for HAL_UART_TxCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMATxAbortCallback) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortCpltCallback) for HAL_UART_AbortCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMATxHalfCplt) refers to stm32f1xx_hal_uart.o(i.HAL_UART_TxHalfCpltCallback) for HAL_UART_TxHalfCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_DMATxOnlyAbortCallback) refers to stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmitCpltCallback) for HAL_UART_AbortTransmitCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_Receive_IT) refers to stm32f1xx_hal_uart.o(i.HAL_UART_RxCpltCallback) for HAL_UART_RxCpltCallback
+    stm32f1xx_hal_uart.o(i.UART_SetConfig) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK2Freq) for HAL_RCC_GetPCLK2Freq
+    stm32f1xx_hal_uart.o(i.UART_SetConfig) refers to stm32f1xx_hal_rcc.o(i.HAL_RCC_GetPCLK1Freq) for HAL_RCC_GetPCLK1Freq
+    stm32f1xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout) refers to stm32f1xx_hal.o(i.HAL_GetTick) for HAL_GetTick
+    system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.data) for .data
+    system_stm32f1xx.o(i.SystemCoreClockUpdate) refers to system_stm32f1xx.o(.constdata) for .constdata
+    context_rvds.o(.text) refers to cpuport.o(i.rt_hw_hard_fault_exception) for rt_hw_hard_fault_exception
+    context_rvds.o(.text) refers to cpuport.o(.data) for rt_thread_switch_interrupt_flag
+    context_rvds.o(.text) refers to cpuport.o(.data) for rt_interrupt_from_thread
+    context_rvds.o(.text) refers to cpuport.o(.data) for rt_interrupt_to_thread
+    board.o(i.SysTick_Handler) refers to irq.o(i.rt_interrupt_enter) for rt_interrupt_enter
+    board.o(i.SysTick_Handler) refers to clock.o(i.rt_tick_increase) for rt_tick_increase
+    board.o(i.SysTick_Handler) refers to irq.o(i.rt_interrupt_leave) for rt_interrupt_leave
+    board.o(i.rt_heap_begin_get) refers to board.o(.bss) for .bss
+    board.o(i.rt_heap_end_get) refers to board.o(.bss) for .bss
+    board.o(i.rt_hw_board_init) refers to system_stm32f1xx.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    board.o(i.rt_hw_board_init) refers to components.o(i.rt_components_board_init) for rt_components_board_init
+    board.o(i.rt_hw_board_init) refers to board.o(i.rt_heap_end_get) for rt_heap_end_get
+    board.o(i.rt_hw_board_init) refers to board.o(i.rt_heap_begin_get) for rt_heap_begin_get
+    board.o(i.rt_hw_board_init) refers to mem.o(i.rt_system_heap_init) for rt_system_heap_init
+    board.o(i.rt_hw_board_init) refers to system_stm32f1xx.o(.data) for SystemCoreClock
+    clock.o(i.rt_tick_get) refers to clock.o(.data) for .data
+    clock.o(i.rt_tick_increase) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    clock.o(i.rt_tick_increase) refers to thread.o(i.rt_thread_yield) for rt_thread_yield
+    clock.o(i.rt_tick_increase) refers to timer.o(i.rt_timer_check) for rt_timer_check
+    clock.o(i.rt_tick_increase) refers to clock.o(.data) for .data
+    clock.o(i.rt_tick_set) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    clock.o(i.rt_tick_set) refers to clock.o(.data) for .data
+    components.o(i.$Sub$$main) refers to components.o(i.rtthread_startup) for rtthread_startup
+    components.o(i.main_thread_entry) refers to components.o(i.rt_components_init) for rt_components_init
+    components.o(i.main_thread_entry) refers to main.o(i.main) for $Super$$main
+    components.o(i.rt_application_init) refers to thread.o(i.rt_thread_create) for rt_thread_create
+    components.o(i.rt_application_init) refers to thread.o(i.rt_thread_startup) for rt_thread_startup
+    components.o(i.rt_application_init) refers to components.o(i.main_thread_entry) for main_thread_entry
+    components.o(i.rt_components_board_init) refers to components.o(.rti_fn.0.end) for .rti_fn.0.end
+    components.o(i.rt_components_board_init) refers to components.o(.rti_fn.1.end) for .rti_fn.1.end
+    components.o(i.rt_components_init) refers to components.o(.rti_fn.1.end) for .rti_fn.1.end
+    components.o(i.rt_components_init) refers to components.o(.rti_fn.6.end) for .rti_fn.6.end
+    components.o(i.rtthread_startup) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    components.o(i.rtthread_startup) refers to board.o(i.rt_hw_board_init) for rt_hw_board_init
+    components.o(i.rtthread_startup) refers to kservice.o(i.rt_show_version) for rt_show_version
+    components.o(i.rtthread_startup) refers to timer.o(i.rt_system_timer_init) for rt_system_timer_init
+    components.o(i.rtthread_startup) refers to scheduler.o(i.rt_system_scheduler_init) for rt_system_scheduler_init
+    components.o(i.rtthread_startup) refers to components.o(i.rt_application_init) for rt_application_init
+    components.o(i.rtthread_startup) refers to timer.o(i.rt_system_timer_thread_init) for rt_system_timer_thread_init
+    components.o(i.rtthread_startup) refers to idle.o(i.rt_thread_idle_init) for rt_thread_idle_init
+    components.o(i.rtthread_startup) refers to scheduler.o(i.rt_system_scheduler_start) for rt_system_scheduler_start
+    components.o(.rti_fn.0) refers to components.o(i.rti_start) for rti_start
+    components.o(.rti_fn.0.end) refers to components.o(i.rti_board_start) for rti_board_start
+    components.o(.rti_fn.1.end) refers to components.o(i.rti_board_end) for rti_board_end
+    components.o(.rti_fn.6.end) refers to components.o(i.rti_end) for rti_end
+    idle.o(i._has_defunct_thread) refers to scheduler.o(.data) for rt_thread_defunct
+    idle.o(i.rt_thread_idle_delhook) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    idle.o(i.rt_thread_idle_delhook) refers to idle.o(.bss) for .bss
+    idle.o(i.rt_thread_idle_entry) refers to idle.o(i.rt_thread_idle_excute) for rt_thread_idle_excute
+    idle.o(i.rt_thread_idle_entry) refers to idle.o(.bss) for .bss
+    idle.o(i.rt_thread_idle_excute) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    idle.o(i.rt_thread_idle_excute) refers to idle.o(i._has_defunct_thread) for _has_defunct_thread
+    idle.o(i.rt_thread_idle_excute) refers to scheduler.o(i.rt_enter_critical) for rt_enter_critical
+    idle.o(i.rt_thread_idle_excute) refers to object.o(i.rt_object_is_systemobject) for rt_object_is_systemobject
+    idle.o(i.rt_thread_idle_excute) refers to scheduler.o(i.rt_exit_critical) for rt_exit_critical
+    idle.o(i.rt_thread_idle_excute) refers to mem.o(i.rt_free) for rt_free
+    idle.o(i.rt_thread_idle_excute) refers to object.o(i.rt_object_delete) for rt_object_delete
+    idle.o(i.rt_thread_idle_excute) refers to object.o(i.rt_object_detach) for rt_object_detach
+    idle.o(i.rt_thread_idle_excute) refers to scheduler.o(.data) for rt_thread_defunct
+    idle.o(i.rt_thread_idle_gethandler) refers to idle.o(.bss) for .bss
+    idle.o(i.rt_thread_idle_init) refers to thread.o(i.rt_thread_init) for rt_thread_init
+    idle.o(i.rt_thread_idle_init) refers to thread.o(i.rt_thread_startup) for rt_thread_startup
+    idle.o(i.rt_thread_idle_init) refers to idle.o(.bss) for .bss
+    idle.o(i.rt_thread_idle_init) refers to idle.o(i.rt_thread_idle_entry) for rt_thread_idle_entry
+    idle.o(i.rt_thread_idle_sethook) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    idle.o(i.rt_thread_idle_sethook) refers to idle.o(.bss) for .bss
+    ipc.o(i.rt_event_control) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_event_control) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_event_control) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_event_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    ipc.o(i.rt_event_delete) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_event_delete) refers to object.o(i.rt_object_delete) for rt_object_delete
+    ipc.o(i.rt_event_detach) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_event_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    ipc.o(i.rt_event_init) refers to object.o(i.rt_object_init) for rt_object_init
+    ipc.o(i.rt_event_recv) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_event_recv) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_event_recv) refers to ipc.o(i.rt_ipc_list_suspend) for rt_ipc_list_suspend
+    ipc.o(i.rt_event_recv) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    ipc.o(i.rt_event_recv) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    ipc.o(i.rt_event_recv) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_event_recv) refers to object.o(.data) for rt_object_trytake_hook
+    ipc.o(i.rt_event_send) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_event_send) refers to thread.o(i.rt_thread_resume) for rt_thread_resume
+    ipc.o(i.rt_event_send) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_event_send) refers to object.o(.data) for rt_object_put_hook
+    ipc.o(i.rt_ipc_list_resume) refers to thread.o(i.rt_thread_resume) for rt_thread_resume
+    ipc.o(i.rt_ipc_list_resume_all) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_ipc_list_resume_all) refers to thread.o(i.rt_thread_resume) for rt_thread_resume
+    ipc.o(i.rt_ipc_list_suspend) refers to thread.o(i.rt_thread_suspend) for rt_thread_suspend
+    ipc.o(i.rt_ipc_list_suspend) refers to ipc.o(i.rt_list_insert_before) for rt_list_insert_before
+    ipc.o(i.rt_mb_control) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mb_control) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mb_control) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mb_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    ipc.o(i.rt_mb_create) refers to mem.o(i.rt_malloc) for rt_malloc
+    ipc.o(i.rt_mb_create) refers to object.o(i.rt_object_delete) for rt_object_delete
+    ipc.o(i.rt_mb_delete) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mb_delete) refers to mem.o(i.rt_free) for rt_free
+    ipc.o(i.rt_mb_delete) refers to object.o(i.rt_object_delete) for rt_object_delete
+    ipc.o(i.rt_mb_detach) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mb_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    ipc.o(i.rt_mb_init) refers to object.o(i.rt_object_init) for rt_object_init
+    ipc.o(i.rt_mb_recv) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_mb_recv) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mb_recv) refers to ipc.o(i.rt_ipc_list_suspend) for rt_ipc_list_suspend
+    ipc.o(i.rt_mb_recv) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    ipc.o(i.rt_mb_recv) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    ipc.o(i.rt_mb_recv) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    ipc.o(i.rt_mb_recv) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mb_recv) refers to ipc.o(i.rt_ipc_list_resume) for rt_ipc_list_resume
+    ipc.o(i.rt_mb_recv) refers to object.o(.data) for rt_object_trytake_hook
+    ipc.o(i.rt_mb_send) refers to ipc.o(i.rt_mb_send_wait) for rt_mb_send_wait
+    ipc.o(i.rt_mb_send_wait) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_mb_send_wait) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mb_send_wait) refers to ipc.o(i.rt_ipc_list_suspend) for rt_ipc_list_suspend
+    ipc.o(i.rt_mb_send_wait) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    ipc.o(i.rt_mb_send_wait) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    ipc.o(i.rt_mb_send_wait) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    ipc.o(i.rt_mb_send_wait) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mb_send_wait) refers to ipc.o(i.rt_ipc_list_resume) for rt_ipc_list_resume
+    ipc.o(i.rt_mb_send_wait) refers to object.o(.data) for rt_object_put_hook
+    ipc.o(i.rt_mq_control) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mq_control) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mq_control) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mq_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    ipc.o(i.rt_mq_create) refers to mem.o(i.rt_malloc) for rt_malloc
+    ipc.o(i.rt_mq_create) refers to ipc.o(i.rt_mq_delete) for rt_mq_delete
+    ipc.o(i.rt_mq_delete) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mq_delete) refers to mem.o(i.rt_free) for rt_free
+    ipc.o(i.rt_mq_delete) refers to object.o(i.rt_object_delete) for rt_object_delete
+    ipc.o(i.rt_mq_detach) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mq_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    ipc.o(i.rt_mq_init) refers to object.o(i.rt_object_init) for rt_object_init
+    ipc.o(i.rt_mq_recv) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_mq_recv) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mq_recv) refers to ipc.o(i.rt_ipc_list_suspend) for rt_ipc_list_suspend
+    ipc.o(i.rt_mq_recv) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    ipc.o(i.rt_mq_recv) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    ipc.o(i.rt_mq_recv) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    ipc.o(i.rt_mq_recv) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mq_recv) refers to kservice.o(i.rt_memcpy) for rt_memcpy
+    ipc.o(i.rt_mq_recv) refers to object.o(.data) for rt_object_trytake_hook
+    ipc.o(i.rt_mq_send) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mq_send) refers to kservice.o(i.rt_memcpy) for rt_memcpy
+    ipc.o(i.rt_mq_send) refers to ipc.o(i.rt_ipc_list_resume) for rt_ipc_list_resume
+    ipc.o(i.rt_mq_send) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mq_send) refers to object.o(.data) for rt_object_put_hook
+    ipc.o(i.rt_mq_urgent) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mq_urgent) refers to kservice.o(i.rt_memcpy) for rt_memcpy
+    ipc.o(i.rt_mq_urgent) refers to ipc.o(i.rt_ipc_list_resume) for rt_ipc_list_resume
+    ipc.o(i.rt_mq_urgent) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mq_urgent) refers to object.o(.data) for rt_object_put_hook
+    ipc.o(i.rt_mutex_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    ipc.o(i.rt_mutex_delete) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mutex_delete) refers to object.o(i.rt_object_delete) for rt_object_delete
+    ipc.o(i.rt_mutex_detach) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_mutex_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    ipc.o(i.rt_mutex_init) refers to object.o(i.rt_object_init) for rt_object_init
+    ipc.o(i.rt_mutex_release) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_mutex_release) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mutex_release) refers to thread.o(i.rt_thread_control) for rt_thread_control
+    ipc.o(i.rt_mutex_release) refers to ipc.o(i.rt_ipc_list_resume) for rt_ipc_list_resume
+    ipc.o(i.rt_mutex_release) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mutex_release) refers to object.o(.data) for rt_object_put_hook
+    ipc.o(i.rt_mutex_take) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_mutex_take) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_mutex_take) refers to thread.o(i.rt_thread_control) for rt_thread_control
+    ipc.o(i.rt_mutex_take) refers to ipc.o(i.rt_ipc_list_suspend) for rt_ipc_list_suspend
+    ipc.o(i.rt_mutex_take) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    ipc.o(i.rt_mutex_take) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    ipc.o(i.rt_mutex_take) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_mutex_take) refers to object.o(.data) for rt_object_trytake_hook
+    ipc.o(i.rt_sem_control) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_sem_control) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_sem_control) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_sem_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    ipc.o(i.rt_sem_delete) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_sem_delete) refers to object.o(i.rt_object_delete) for rt_object_delete
+    ipc.o(i.rt_sem_detach) refers to ipc.o(i.rt_ipc_list_resume_all) for rt_ipc_list_resume_all
+    ipc.o(i.rt_sem_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    ipc.o(i.rt_sem_init) refers to object.o(i.rt_object_init) for rt_object_init
+    ipc.o(i.rt_sem_release) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_sem_release) refers to ipc.o(i.rt_ipc_list_resume) for rt_ipc_list_resume
+    ipc.o(i.rt_sem_release) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_sem_release) refers to object.o(.data) for rt_object_put_hook
+    ipc.o(i.rt_sem_take) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    ipc.o(i.rt_sem_take) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    ipc.o(i.rt_sem_take) refers to ipc.o(i.rt_ipc_list_suspend) for rt_ipc_list_suspend
+    ipc.o(i.rt_sem_take) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    ipc.o(i.rt_sem_take) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    ipc.o(i.rt_sem_take) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    ipc.o(i.rt_sem_take) refers to object.o(.data) for rt_object_trytake_hook
+    ipc.o(i.rt_sem_trytake) refers to ipc.o(i.rt_sem_take) for rt_sem_take
+    irq.o(i.rt_interrupt_enter) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    irq.o(i.rt_interrupt_enter) refers to irq.o(.data) for .data
+    irq.o(i.rt_interrupt_enter_sethook) refers to irq.o(.data) for .data
+    irq.o(i.rt_interrupt_get_nest) refers to irq.o(.data) for .data
+    irq.o(i.rt_interrupt_leave) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    irq.o(i.rt_interrupt_leave) refers to irq.o(.data) for .data
+    irq.o(i.rt_interrupt_leave_sethook) refers to irq.o(.data) for .data
+    kservice.o(i.__rt_ffs) refers to kservice.o(.constdata) for .constdata
+    kservice.o(i._rt_errno) refers to irq.o(i.rt_interrupt_get_nest) for rt_interrupt_get_nest
+    kservice.o(i._rt_errno) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    kservice.o(i._rt_errno) refers to kservice.o(.data) for .data
+    kservice.o(i.print_number) refers to kservice.o(.constdata) for .constdata
+    kservice.o(i.rt_free_align) refers to mem.o(i.rt_free) for rt_free
+    kservice.o(i.rt_get_errno) refers to irq.o(i.rt_interrupt_get_nest) for rt_interrupt_get_nest
+    kservice.o(i.rt_get_errno) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    kservice.o(i.rt_get_errno) refers to kservice.o(.data) for .data
+    kservice.o(i.rt_kprintf) refers to kservice.o(i.rt_vsnprintf) for rt_vsnprintf
+    kservice.o(i.rt_kprintf) refers to kservice.o(i.rt_hw_console_output) for rt_hw_console_output
+    kservice.o(i.rt_kprintf) refers to kservice.o(.bss) for .bss
+    kservice.o(i.rt_kputs) refers to kservice.o(i.rt_hw_console_output) for rt_hw_console_output
+    kservice.o(i.rt_malloc_align) refers to mem.o(i.rt_malloc) for rt_malloc
+    kservice.o(i.rt_set_errno) refers to irq.o(i.rt_interrupt_get_nest) for rt_interrupt_get_nest
+    kservice.o(i.rt_set_errno) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    kservice.o(i.rt_set_errno) refers to kservice.o(.data) for .data
+    kservice.o(i.rt_show_version) refers to kservice.o(i.rt_kprintf) for rt_kprintf
+    kservice.o(i.rt_snprintf) refers to kservice.o(i.rt_vsnprintf) for rt_vsnprintf
+    kservice.o(i.rt_sprintf) refers to kservice.o(i.rt_vsprintf) for rt_vsprintf
+    kservice.o(i.rt_strdup) refers to kservice.o(i.rt_strlen) for rt_strlen
+    kservice.o(i.rt_strdup) refers to mem.o(i.rt_malloc) for rt_malloc
+    kservice.o(i.rt_strdup) refers to kservice.o(i.rt_memcpy) for rt_memcpy
+    kservice.o(i.rt_strstr) refers to kservice.o(i.rt_strlen) for rt_strlen
+    kservice.o(i.rt_strstr) refers to kservice.o(i.rt_memcmp) for rt_memcmp
+    kservice.o(i.rt_vsnprintf) refers to kservice.o(i.skip_atoi) for skip_atoi
+    kservice.o(i.rt_vsnprintf) refers to kservice.o(i.rt_strlen) for rt_strlen
+    kservice.o(i.rt_vsnprintf) refers to kservice.o(i.print_number) for print_number
+    kservice.o(i.rt_vsprintf) refers to kservice.o(i.rt_vsnprintf) for rt_vsnprintf
+    mem.o(i.plug_holes) refers to mem.o(.data) for .data
+    mem.o(i.rt_calloc) refers to mem.o(i.rt_malloc) for rt_malloc
+    mem.o(i.rt_calloc) refers to kservice.o(i.rt_memset) for rt_memset
+    mem.o(i.rt_free) refers to ipc.o(i.rt_sem_take) for rt_sem_take
+    mem.o(i.rt_free) refers to kservice.o(i.rt_kprintf) for rt_kprintf
+    mem.o(i.rt_free) refers to mem.o(i.plug_holes) for plug_holes
+    mem.o(i.rt_free) refers to ipc.o(i.rt_sem_release) for rt_sem_release
+    mem.o(i.rt_free) refers to mem.o(.data) for .data
+    mem.o(i.rt_free) refers to mem.o(.bss) for .bss
+    mem.o(i.rt_free_sethook) refers to mem.o(.data) for .data
+    mem.o(i.rt_malloc) refers to ipc.o(i.rt_sem_take) for rt_sem_take
+    mem.o(i.rt_malloc) refers to ipc.o(i.rt_sem_release) for rt_sem_release
+    mem.o(i.rt_malloc) refers to mem.o(.data) for .data
+    mem.o(i.rt_malloc) refers to mem.o(.bss) for .bss
+    mem.o(i.rt_malloc_sethook) refers to mem.o(.data) for .data
+    mem.o(i.rt_memory_info) refers to mem.o(.data) for .data
+    mem.o(i.rt_realloc) refers to ipc.o(i.rt_sem_take) for rt_sem_take
+    mem.o(i.rt_realloc) refers to ipc.o(i.rt_sem_release) for rt_sem_release
+    mem.o(i.rt_realloc) refers to mem.o(i.rt_free) for rt_free
+    mem.o(i.rt_realloc) refers to mem.o(i.rt_malloc) for rt_malloc
+    mem.o(i.rt_realloc) refers to mem.o(i.plug_holes) for plug_holes
+    mem.o(i.rt_realloc) refers to kservice.o(i.rt_memcpy) for rt_memcpy
+    mem.o(i.rt_realloc) refers to mem.o(.data) for .data
+    mem.o(i.rt_realloc) refers to mem.o(.bss) for .bss
+    mem.o(i.rt_system_heap_init) refers to ipc.o(i.rt_sem_init) for rt_sem_init
+    mem.o(i.rt_system_heap_init) refers to kservice.o(i.rt_kprintf) for rt_kprintf
+    mem.o(i.rt_system_heap_init) refers to mem.o(.data) for .data
+    mem.o(i.rt_system_heap_init) refers to mem.o(.bss) for .bss
+    object.o(i.rt_object_allocate) refers to object.o(i.rt_object_get_information) for rt_object_get_information
+    object.o(i.rt_object_allocate) refers to mem.o(i.rt_malloc) for rt_malloc
+    object.o(i.rt_object_allocate) refers to kservice.o(i.rt_memset) for rt_memset
+    object.o(i.rt_object_allocate) refers to kservice.o(i.rt_strncpy) for rt_strncpy
+    object.o(i.rt_object_allocate) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    object.o(i.rt_object_allocate) refers to object.o(i.rt_list_insert_after) for rt_list_insert_after
+    object.o(i.rt_object_allocate) refers to object.o(.data) for .data
+    object.o(i.rt_object_attach_sethook) refers to object.o(.data) for .data
+    object.o(i.rt_object_delete) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    object.o(i.rt_object_delete) refers to object.o(i.rt_list_remove) for rt_list_remove
+    object.o(i.rt_object_delete) refers to mem.o(i.rt_free) for rt_free
+    object.o(i.rt_object_delete) refers to object.o(.data) for .data
+    object.o(i.rt_object_detach) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    object.o(i.rt_object_detach) refers to object.o(i.rt_list_remove) for rt_list_remove
+    object.o(i.rt_object_detach) refers to object.o(.data) for .data
+    object.o(i.rt_object_detach_sethook) refers to object.o(.data) for .data
+    object.o(i.rt_object_find) refers to scheduler.o(i.rt_enter_critical) for rt_enter_critical
+    object.o(i.rt_object_find) refers to object.o(i.rt_object_get_information) for rt_object_get_information
+    object.o(i.rt_object_find) refers to kservice.o(i.rt_strncmp) for rt_strncmp
+    object.o(i.rt_object_find) refers to scheduler.o(i.rt_exit_critical) for rt_exit_critical
+    object.o(i.rt_object_get_information) refers to object.o(.data) for .data
+    object.o(i.rt_object_init) refers to object.o(i.rt_object_get_information) for rt_object_get_information
+    object.o(i.rt_object_init) refers to scheduler.o(i.rt_enter_critical) for rt_enter_critical
+    object.o(i.rt_object_init) refers to scheduler.o(i.rt_exit_critical) for rt_exit_critical
+    object.o(i.rt_object_init) refers to kservice.o(i.rt_strncpy) for rt_strncpy
+    object.o(i.rt_object_init) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    object.o(i.rt_object_init) refers to object.o(i.rt_list_insert_after) for rt_list_insert_after
+    object.o(i.rt_object_init) refers to object.o(.data) for .data
+    object.o(i.rt_object_put_sethook) refers to object.o(.data) for .data
+    object.o(i.rt_object_take_sethook) refers to object.o(.data) for .data
+    object.o(i.rt_object_trytake_sethook) refers to object.o(.data) for .data
+    scheduler.o(i.rt_critical_level) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_enter_critical) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    scheduler.o(i.rt_enter_critical) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_exit_critical) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    scheduler.o(i.rt_exit_critical) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    scheduler.o(i.rt_exit_critical) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_schedule) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    scheduler.o(i.rt_schedule) refers to kservice.o(i.__rt_ffs) for __rt_ffs
+    scheduler.o(i.rt_schedule) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_schedule) refers to scheduler.o(.bss) for .bss
+    scheduler.o(i.rt_schedule) refers to irq.o(.data) for rt_interrupt_nest
+    scheduler.o(i.rt_schedule_insert_thread) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    scheduler.o(i.rt_schedule_insert_thread) refers to scheduler.o(.bss) for .bss
+    scheduler.o(i.rt_schedule_insert_thread) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_schedule_remove_thread) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    scheduler.o(i.rt_schedule_remove_thread) refers to scheduler.o(.bss) for .bss
+    scheduler.o(i.rt_schedule_remove_thread) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_scheduler_sethook) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_system_scheduler_init) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_system_scheduler_init) refers to scheduler.o(.bss) for .bss
+    scheduler.o(i.rt_system_scheduler_start) refers to kservice.o(i.__rt_ffs) for __rt_ffs
+    scheduler.o(i.rt_system_scheduler_start) refers to context_rvds.o(.text) for rt_hw_context_switch_to
+    scheduler.o(i.rt_system_scheduler_start) refers to scheduler.o(.data) for .data
+    scheduler.o(i.rt_system_scheduler_start) refers to scheduler.o(.bss) for .bss
+    thread.o(i._rt_thread_init) refers to kservice.o(i.rt_memset) for rt_memset
+    thread.o(i._rt_thread_init) refers to cpuport.o(i.rt_hw_stack_init) for rt_hw_stack_init
+    thread.o(i._rt_thread_init) refers to timer.o(i.rt_timer_init) for rt_timer_init
+    thread.o(i._rt_thread_init) refers to thread.o(i.rt_thread_exit) for rt_thread_exit
+    thread.o(i._rt_thread_init) refers to thread.o(i.rt_thread_timeout) for rt_thread_timeout
+    thread.o(i._rt_thread_init) refers to thread.o(.data) for .data
+    thread.o(i.rt_thread_control) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_control) refers to scheduler.o(i.rt_schedule_remove_thread) for rt_schedule_remove_thread
+    thread.o(i.rt_thread_control) refers to scheduler.o(i.rt_schedule_insert_thread) for rt_schedule_insert_thread
+    thread.o(i.rt_thread_control) refers to thread.o(i.rt_thread_startup) for rt_thread_startup
+    thread.o(i.rt_thread_control) refers to thread.o(i.rt_thread_delete) for rt_thread_delete
+    thread.o(i.rt_thread_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    thread.o(i.rt_thread_create) refers to mem.o(i.rt_malloc) for rt_malloc
+    thread.o(i.rt_thread_create) refers to thread.o(i._rt_thread_init) for _rt_thread_init
+    thread.o(i.rt_thread_create) refers to object.o(i.rt_object_delete) for rt_object_delete
+    thread.o(i.rt_thread_delay) refers to thread.o(i.rt_thread_sleep) for rt_thread_sleep
+    thread.o(i.rt_thread_delete) refers to scheduler.o(i.rt_schedule_remove_thread) for rt_schedule_remove_thread
+    thread.o(i.rt_thread_delete) refers to timer.o(i.rt_timer_detach) for rt_timer_detach
+    thread.o(i.rt_thread_delete) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_delete) refers to thread.o(i.rt_list_insert_after) for rt_list_insert_after
+    thread.o(i.rt_thread_delete) refers to scheduler.o(.data) for rt_thread_defunct
+    thread.o(i.rt_thread_detach) refers to scheduler.o(i.rt_schedule_remove_thread) for rt_schedule_remove_thread
+    thread.o(i.rt_thread_detach) refers to timer.o(i.rt_timer_detach) for rt_timer_detach
+    thread.o(i.rt_thread_detach) refers to object.o(i.rt_object_is_systemobject) for rt_object_is_systemobject
+    thread.o(i.rt_thread_detach) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_detach) refers to thread.o(i.rt_list_insert_after) for rt_list_insert_after
+    thread.o(i.rt_thread_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    thread.o(i.rt_thread_detach) refers to scheduler.o(.data) for rt_thread_defunct
+    thread.o(i.rt_thread_exit) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_exit) refers to scheduler.o(i.rt_schedule_remove_thread) for rt_schedule_remove_thread
+    thread.o(i.rt_thread_exit) refers to timer.o(i.rt_timer_detach) for rt_timer_detach
+    thread.o(i.rt_thread_exit) refers to object.o(i.rt_object_is_systemobject) for rt_object_is_systemobject
+    thread.o(i.rt_thread_exit) refers to thread.o(i.rt_list_insert_after) for rt_list_insert_after
+    thread.o(i.rt_thread_exit) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    thread.o(i.rt_thread_exit) refers to object.o(i.rt_object_detach) for rt_object_detach
+    thread.o(i.rt_thread_exit) refers to scheduler.o(.data) for rt_current_thread
+    thread.o(i.rt_thread_find) refers to scheduler.o(i.rt_enter_critical) for rt_enter_critical
+    thread.o(i.rt_thread_find) refers to object.o(i.rt_object_get_information) for rt_object_get_information
+    thread.o(i.rt_thread_find) refers to kservice.o(i.rt_strncmp) for rt_strncmp
+    thread.o(i.rt_thread_find) refers to scheduler.o(i.rt_exit_critical) for rt_exit_critical
+    thread.o(i.rt_thread_find) refers to scheduler.o(.data) for rt_current_thread
+    thread.o(i.rt_thread_init) refers to object.o(i.rt_object_init) for rt_object_init
+    thread.o(i.rt_thread_init) refers to thread.o(i._rt_thread_init) for _rt_thread_init
+    thread.o(i.rt_thread_inited_sethook) refers to thread.o(.data) for .data
+    thread.o(i.rt_thread_mdelay) refers to clock.o(i.rt_tick_from_millisecond) for rt_tick_from_millisecond
+    thread.o(i.rt_thread_mdelay) refers to thread.o(i.rt_thread_sleep) for rt_thread_sleep
+    thread.o(i.rt_thread_resume) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_resume) refers to thread.o(i.rt_list_remove) for rt_list_remove
+    thread.o(i.rt_thread_resume) refers to timer.o(i.rt_timer_stop) for rt_timer_stop
+    thread.o(i.rt_thread_resume) refers to scheduler.o(i.rt_schedule_insert_thread) for rt_schedule_insert_thread
+    thread.o(i.rt_thread_resume) refers to thread.o(.data) for .data
+    thread.o(i.rt_thread_resume_sethook) refers to thread.o(.data) for .data
+    thread.o(i.rt_thread_self) refers to scheduler.o(.data) for rt_current_thread
+    thread.o(i.rt_thread_sleep) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_sleep) refers to thread.o(i.rt_thread_suspend) for rt_thread_suspend
+    thread.o(i.rt_thread_sleep) refers to timer.o(i.rt_timer_control) for rt_timer_control
+    thread.o(i.rt_thread_sleep) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    thread.o(i.rt_thread_sleep) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    thread.o(i.rt_thread_sleep) refers to scheduler.o(.data) for rt_current_thread
+    thread.o(i.rt_thread_startup) refers to thread.o(i.rt_thread_resume) for rt_thread_resume
+    thread.o(i.rt_thread_startup) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    thread.o(i.rt_thread_startup) refers to scheduler.o(.data) for rt_current_thread
+    thread.o(i.rt_thread_suspend) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_suspend) refers to scheduler.o(i.rt_schedule_remove_thread) for rt_schedule_remove_thread
+    thread.o(i.rt_thread_suspend) refers to timer.o(i.rt_timer_stop) for rt_timer_stop
+    thread.o(i.rt_thread_suspend) refers to thread.o(.data) for .data
+    thread.o(i.rt_thread_suspend_sethook) refers to thread.o(.data) for .data
+    thread.o(i.rt_thread_timeout) refers to thread.o(i.rt_list_remove) for rt_list_remove
+    thread.o(i.rt_thread_timeout) refers to scheduler.o(i.rt_schedule_insert_thread) for rt_schedule_insert_thread
+    thread.o(i.rt_thread_timeout) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    thread.o(i.rt_thread_yield) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    thread.o(i.rt_thread_yield) refers to thread.o(i.rt_list_remove) for rt_list_remove
+    thread.o(i.rt_thread_yield) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    thread.o(i.rt_thread_yield) refers to scheduler.o(.data) for rt_current_thread
+    thread.o(i.rt_thread_yield) refers to scheduler.o(.bss) for rt_thread_priority_table
+    timer.o(i.rt_soft_timer_check) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    timer.o(i.rt_soft_timer_check) refers to scheduler.o(i.rt_enter_critical) for rt_enter_critical
+    timer.o(i.rt_soft_timer_check) refers to timer.o(i._rt_timer_remove) for _rt_timer_remove
+    timer.o(i.rt_soft_timer_check) refers to scheduler.o(i.rt_exit_critical) for rt_exit_critical
+    timer.o(i.rt_soft_timer_check) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    timer.o(i.rt_soft_timer_check) refers to timer.o(.data) for .data
+    timer.o(i.rt_system_timer_init) refers to timer.o(.data) for .data
+    timer.o(i.rt_system_timer_thread_init) refers to thread.o(i.rt_thread_init) for rt_thread_init
+    timer.o(i.rt_system_timer_thread_init) refers to thread.o(i.rt_thread_startup) for rt_thread_startup
+    timer.o(i.rt_system_timer_thread_init) refers to timer.o(.data) for .data
+    timer.o(i.rt_system_timer_thread_init) refers to timer.o(.bss) for .bss
+    timer.o(i.rt_system_timer_thread_init) refers to timer.o(i.rt_thread_timer_entry) for rt_thread_timer_entry
+    timer.o(i.rt_thread_timer_entry) refers to timer.o(i.rt_timer_list_next_timeout) for rt_timer_list_next_timeout
+    timer.o(i.rt_thread_timer_entry) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    timer.o(i.rt_thread_timer_entry) refers to thread.o(i.rt_thread_delay) for rt_thread_delay
+    timer.o(i.rt_thread_timer_entry) refers to timer.o(i.rt_soft_timer_check) for rt_soft_timer_check
+    timer.o(i.rt_thread_timer_entry) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    timer.o(i.rt_thread_timer_entry) refers to thread.o(i.rt_thread_suspend) for rt_thread_suspend
+    timer.o(i.rt_thread_timer_entry) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    timer.o(i.rt_thread_timer_entry) refers to timer.o(.data) for .data
+    timer.o(i.rt_timer_check) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    timer.o(i.rt_timer_check) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    timer.o(i.rt_timer_check) refers to timer.o(i._rt_timer_remove) for _rt_timer_remove
+    timer.o(i.rt_timer_check) refers to timer.o(i.rt_timer_start) for rt_timer_start
+    timer.o(i.rt_timer_check) refers to timer.o(.data) for .data
+    timer.o(i.rt_timer_create) refers to object.o(i.rt_object_allocate) for rt_object_allocate
+    timer.o(i.rt_timer_create) refers to timer.o(i._rt_timer_init) for _rt_timer_init
+    timer.o(i.rt_timer_delete) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    timer.o(i.rt_timer_delete) refers to timer.o(i._rt_timer_remove) for _rt_timer_remove
+    timer.o(i.rt_timer_delete) refers to object.o(i.rt_object_delete) for rt_object_delete
+    timer.o(i.rt_timer_detach) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    timer.o(i.rt_timer_detach) refers to timer.o(i._rt_timer_remove) for _rt_timer_remove
+    timer.o(i.rt_timer_detach) refers to object.o(i.rt_object_detach) for rt_object_detach
+    timer.o(i.rt_timer_enter_sethook) refers to timer.o(.data) for .data
+    timer.o(i.rt_timer_exit_sethook) refers to timer.o(.data) for .data
+    timer.o(i.rt_timer_init) refers to object.o(i.rt_object_init) for rt_object_init
+    timer.o(i.rt_timer_init) refers to timer.o(i._rt_timer_init) for _rt_timer_init
+    timer.o(i.rt_timer_next_timeout_tick) refers to timer.o(i.rt_timer_list_next_timeout) for rt_timer_list_next_timeout
+    timer.o(i.rt_timer_next_timeout_tick) refers to timer.o(.data) for .data
+    timer.o(i.rt_timer_start) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    timer.o(i.rt_timer_start) refers to timer.o(i._rt_timer_remove) for _rt_timer_remove
+    timer.o(i.rt_timer_start) refers to clock.o(i.rt_tick_get) for rt_tick_get
+    timer.o(i.rt_timer_start) refers to timer.o(i.rt_list_insert_after) for rt_list_insert_after
+    timer.o(i.rt_timer_start) refers to thread.o(i.rt_thread_resume) for rt_thread_resume
+    timer.o(i.rt_timer_start) refers to scheduler.o(i.rt_schedule) for rt_schedule
+    timer.o(i.rt_timer_start) refers to object.o(.data) for rt_object_take_hook
+    timer.o(i.rt_timer_start) refers to timer.o(.data) for .data
+    timer.o(i.rt_timer_start) refers to timer.o(.bss) for .bss
+    timer.o(i.rt_timer_stop) refers to context_rvds.o(.text) for rt_hw_interrupt_disable
+    timer.o(i.rt_timer_stop) refers to timer.o(i._rt_timer_remove) for _rt_timer_remove
+    timer.o(i.rt_timer_stop) refers to object.o(.data) for rt_object_put_hook
+    cpuport.o(i.rt_hw_cpu_shutdown) refers to kservice.o(i.rt_kprintf) for rt_kprintf
+    cpuport.o(i.rt_hw_exception_install) refers to cpuport.o(.data) for .data
+    cpuport.o(i.rt_hw_hard_fault_exception) refers to kservice.o(i.rt_kprintf) for rt_kprintf
+    cpuport.o(i.rt_hw_hard_fault_exception) refers to thread.o(i.rt_thread_self) for rt_thread_self
+    cpuport.o(i.rt_hw_hard_fault_exception) refers to cpuport.o(.data) for .data
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f103xb.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f103xb.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to components.o(i.$Sub$$main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to components.o(i.$Sub$$main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_stm32f103xb.o(HEAP), (512 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing gpio.o(.rev16_text), (4 bytes).
+    Removing gpio.o(.revsh_text), (4 bytes).
+    Removing gpio.o(.rrx_text), (6 bytes).
+    Removing dma.o(.rev16_text), (4 bytes).
+    Removing dma.o(.revsh_text), (4 bytes).
+    Removing dma.o(.rrx_text), (6 bytes).
+    Removing usart.o(.rev16_text), (4 bytes).
+    Removing usart.o(.revsh_text), (4 bytes).
+    Removing usart.o(.rrx_text), (6 bytes).
+    Removing usart.o(i.HAL_UART_MspDeInit), (68 bytes).
+    Removing stm32f1xx_it.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_it.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_it.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_msp.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_msp.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_msp.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_gpio_ex.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_gpio_ex.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_gpio_ex.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_gpio_ex.o(i.HAL_GPIOEx_ConfigEventout), (20 bytes).
+    Removing stm32f1xx_hal_gpio_ex.o(i.HAL_GPIOEx_DisableEventout), (16 bytes).
+    Removing stm32f1xx_hal_gpio_ex.o(i.HAL_GPIOEx_EnableEventout), (16 bytes).
+    Removing stm32f1xx_hal.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DBGMCU_DisableDBGSleepMode), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DBGMCU_DisableDBGStandbyMode), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DBGMCU_DisableDBGStopMode), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DBGMCU_EnableDBGSleepMode), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DBGMCU_EnableDBGStandbyMode), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DBGMCU_EnableDBGStopMode), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_DeInit), (32 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_Delay), (36 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetDEVID), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetHalVersion), (8 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetREVID), (12 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetTickFreq), (12 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetTickPrio), (12 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetUIDw0), (12 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetUIDw1), (12 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_GetUIDw2), (12 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_IncTick), (16 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_MspDeInit), (2 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_MspInit), (2 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_ResumeTick), (14 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_SetTickFreq), (32 bytes).
+    Removing stm32f1xx_hal.o(i.HAL_SuspendTick), (14 bytes).
+    Removing stm32f1xx_hal_rcc.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_rcc.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_rcc.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_CSSCallback), (2 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_DeInit), (220 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_DisableCSS), (12 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_EnableCSS), (12 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_GetClockConfig), (64 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_GetHCLKFreq), (12 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_GetOscConfig), (144 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_MCOConfig), (72 bytes).
+    Removing stm32f1xx_hal_rcc.o(i.HAL_RCC_NMI_IRQHandler), (24 bytes).
+    Removing stm32f1xx_hal_rcc_ex.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_rcc_ex.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_rcc_ex.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_rcc_ex.o(i.HAL_RCCEx_GetPeriphCLKConfig), (44 bytes).
+    Removing stm32f1xx_hal_rcc_ex.o(i.HAL_RCCEx_GetPeriphCLKFreq), (200 bytes).
+    Removing stm32f1xx_hal_rcc_ex.o(i.HAL_RCCEx_PeriphCLKConfig), (236 bytes).
+    Removing stm32f1xx_hal_gpio.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_gpio.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_gpio.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_gpio.o(i.HAL_GPIO_DeInit), (252 bytes).
+    Removing stm32f1xx_hal_gpio.o(i.HAL_GPIO_LockPin), (34 bytes).
+    Removing stm32f1xx_hal_gpio.o(i.HAL_GPIO_ReadPin), (10 bytes).
+    Removing stm32f1xx_hal_gpio.o(i.HAL_GPIO_TogglePin), (14 bytes).
+    Removing stm32f1xx_hal_dma.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_dma.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_dma.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_dma.o(i.DMA_SetConfig), (42 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_Abort), (70 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_DeInit), (92 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_GetError), (4 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_GetState), (6 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_PollForTransfer), (532 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_RegisterCallback), (74 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_Start), (80 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_Start_IT), (112 bytes).
+    Removing stm32f1xx_hal_dma.o(i.HAL_DMA_UnRegisterCallback), (82 bytes).
+    Removing stm32f1xx_hal_cortex.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_cortex.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_cortex.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_ClearPendingIRQ), (26 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_DisableIRQ), (34 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_GetActive), (36 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_GetPendingIRQ), (36 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_GetPriority), (82 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_GetPriorityGrouping), (16 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_SetPendingIRQ), (26 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_NVIC_SystemReset), (36 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_CLKSourceConfig), (24 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_Callback), (2 bytes).
+    Removing stm32f1xx_hal_cortex.o(i.HAL_SYSTICK_IRQHandler), (8 bytes).
+    Removing stm32f1xx_hal_pwr.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_pwr.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_pwr.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_ConfigPVD), (124 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_DeInit), (24 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_DisableBkUpAccess), (12 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_DisablePVD), (12 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_DisableSEVOnPend), (16 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_DisableSleepOnExit), (16 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_DisableWakeUpPin), (28 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnableBkUpAccess), (12 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnablePVD), (12 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnableSEVOnPend), (16 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnableSleepOnExit), (16 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnableWakeUpPin), (28 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnterSLEEPMode), (32 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnterSTANDBYMode), (32 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_EnterSTOPMode), (68 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_PVDCallback), (2 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.HAL_PWR_PVD_IRQHandler), (28 bytes).
+    Removing stm32f1xx_hal_pwr.o(i.PWR_OverloadWfe), (6 bytes).
+    Removing stm32f1xx_hal_flash.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_flash.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_flash.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_flash.o(i.FLASH_Program_HalfWord), (28 bytes).
+    Removing stm32f1xx_hal_flash.o(i.FLASH_SetErrorCode), (92 bytes).
+    Removing stm32f1xx_hal_flash.o(i.FLASH_WaitForLastOperation), (84 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_EndOfOperationCallback), (2 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_GetError), (12 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_IRQHandler), (264 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_Lock), (20 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_OB_Launch), (4 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_OB_Lock), (20 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_OB_Unlock), (36 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_OperationErrorCallback), (2 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_Program), (128 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_Program_IT), (100 bytes).
+    Removing stm32f1xx_hal_flash.o(i.HAL_FLASH_Unlock), (40 bytes).
+    Removing stm32f1xx_hal_flash.o(.bss), (32 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.FLASH_MassErase), (36 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.FLASH_OB_DisableWRP), (176 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.FLASH_OB_EnableWRP), (176 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.FLASH_OB_GetRDP), (24 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.FLASH_OB_RDP_LevelConfig), (100 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.FLASH_PageErase), (36 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase), (168 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_Erase_IT), (84 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBErase), (84 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBGetConfig), (36 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBGetUserData), (32 bytes).
+    Removing stm32f1xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram), (200 bytes).
+    Removing stm32f1xx_hal_exti.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_exti.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_exti.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_ClearConfigLine), (104 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_ClearPending), (20 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_GenerateSWI), (20 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_GetConfigLine), (152 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_GetHandle), (12 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_GetPending), (24 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_IRQHandler), (36 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_RegisterCallback), (14 bytes).
+    Removing stm32f1xx_hal_exti.o(i.HAL_EXTI_SetConfigLine), (164 bytes).
+    Removing stm32f1xx_hal_tim.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_tim.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_tim.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_tim_ex.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_tim_ex.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_tim_ex.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_uart.o(.rev16_text), (4 bytes).
+    Removing stm32f1xx_hal_uart.o(.revsh_text), (4 bytes).
+    Removing stm32f1xx_hal_uart.o(.rrx_text), (6 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_HalfDuplex_EnableReceiver), (50 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_HalfDuplex_EnableTransmitter), (50 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_HalfDuplex_Init), (108 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_LIN_Init), (128 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_LIN_SendBreak), (46 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_MultiProcessor_EnterMuteMode), (46 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_MultiProcessor_ExitMuteMode), (46 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_MultiProcessor_Init), (142 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Abort), (138 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortCpltCallback), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive), (88 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceiveCpltCallback), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortReceive_IT), (92 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit), (78 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmitCpltCallback), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_AbortTransmit_IT), (84 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Abort_IT), (172 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_DMAPause), (102 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_DMAResume), (94 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_DMAStop), (88 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_DeInit), (50 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_GetError), (4 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_GetState), (10 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_MspDeInit), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_MspInit), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Receive), (184 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Receive_DMA), (152 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Receive_IT), (82 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_RxHalfCpltCallback), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Transmit), (186 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_DMA), (128 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_Transmit_IT), (62 bytes).
+    Removing stm32f1xx_hal_uart.o(i.HAL_UART_TxHalfCpltCallback), (2 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMAError), (74 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMAReceiveCplt), (60 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMARxAbortCallback), (42 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMARxHalfCplt), (10 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMARxOnlyAbortCallback), (20 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMATransmitCplt), (46 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMATxAbortCallback), (42 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMATxHalfCplt), (10 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_DMATxOnlyAbortCallback), (20 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_EndTxTransfer), (18 bytes).
+    Removing stm32f1xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout), (100 bytes).
+    Removing system_stm32f1xx.o(.rev16_text), (4 bytes).
+    Removing system_stm32f1xx.o(.revsh_text), (4 bytes).
+    Removing system_stm32f1xx.o(.rrx_text), (6 bytes).
+    Removing clock.o(i.rt_system_tick_init), (2 bytes).
+    Removing clock.o(i.rt_tick_from_millisecond), (50 bytes).
+    Removing clock.o(i.rt_tick_set), (24 bytes).
+    Removing idle.o(i.rt_thread_idle_delhook), (60 bytes).
+    Removing idle.o(i.rt_thread_idle_gethandler), (8 bytes).
+    Removing idle.o(i.rt_thread_idle_sethook), (56 bytes).
+    Removing ipc.o(i.rt_event_control), (46 bytes).
+    Removing ipc.o(i.rt_event_create), (32 bytes).
+    Removing ipc.o(i.rt_event_delete), (20 bytes).
+    Removing ipc.o(i.rt_event_detach), (20 bytes).
+    Removing ipc.o(i.rt_event_init), (30 bytes).
+    Removing ipc.o(i.rt_event_recv), (220 bytes).
+    Removing ipc.o(i.rt_event_send), (152 bytes).
+    Removing ipc.o(i.rt_ipc_list_resume_all), (44 bytes).
+    Removing ipc.o(i.rt_mb_control), (58 bytes).
+    Removing ipc.o(i.rt_mb_create), (72 bytes).
+    Removing ipc.o(i.rt_mb_delete), (34 bytes).
+    Removing ipc.o(i.rt_mb_detach), (28 bytes).
+    Removing ipc.o(i.rt_mb_init), (52 bytes).
+    Removing ipc.o(i.rt_mb_recv), (280 bytes).
+    Removing ipc.o(i.rt_mb_send), (6 bytes).
+    Removing ipc.o(i.rt_mb_send_wait), (248 bytes).
+    Removing ipc.o(i.rt_mq_control), (72 bytes).
+    Removing ipc.o(i.rt_mq_create), (112 bytes).
+    Removing ipc.o(i.rt_mq_delete), (26 bytes).
+    Removing ipc.o(i.rt_mq_detach), (20 bytes).
+    Removing ipc.o(i.rt_mq_init), (98 bytes).
+    Removing ipc.o(i.rt_mq_recv), (272 bytes).
+    Removing ipc.o(i.rt_mq_send), (144 bytes).
+    Removing ipc.o(i.rt_mq_urgent), (136 bytes).
+    Removing ipc.o(i.rt_mutex_control), (6 bytes).
+    Removing ipc.o(i.rt_mutex_create), (42 bytes).
+    Removing ipc.o(i.rt_mutex_delete), (20 bytes).
+    Removing ipc.o(i.rt_mutex_detach), (20 bytes).
+    Removing ipc.o(i.rt_mutex_init), (40 bytes).
+    Removing ipc.o(i.rt_mutex_release), (152 bytes).
+    Removing ipc.o(i.rt_mutex_take), (208 bytes).
+    Removing ipc.o(i.rt_sem_control), (46 bytes).
+    Removing ipc.o(i.rt_sem_create), (32 bytes).
+    Removing ipc.o(i.rt_sem_delete), (20 bytes).
+    Removing ipc.o(i.rt_sem_detach), (20 bytes).
+    Removing ipc.o(i.rt_sem_trytake), (6 bytes).
+    Removing irq.o(i.rt_interrupt_enter_sethook), (12 bytes).
+    Removing irq.o(i.rt_interrupt_get_nest), (12 bytes).
+    Removing irq.o(i.rt_interrupt_leave_sethook), (12 bytes).
+    Removing kservice.o(i._rt_errno), (28 bytes).
+    Removing kservice.o(i.rt_free_align), (8 bytes).
+    Removing kservice.o(i.rt_get_errno), (28 bytes).
+    Removing kservice.o(i.rt_kputs), (12 bytes).
+    Removing kservice.o(i.rt_malloc_align), (50 bytes).
+    Removing kservice.o(i.rt_memcmp), (28 bytes).
+    Removing kservice.o(i.rt_memcpy), (50 bytes).
+    Removing kservice.o(i.rt_memmove), (50 bytes).
+    Removing kservice.o(i.rt_set_errno), (32 bytes).
+    Removing kservice.o(i.rt_snprintf), (18 bytes).
+    Removing kservice.o(i.rt_sprintf), (18 bytes).
+    Removing kservice.o(i.rt_strcasecmp), (44 bytes).
+    Removing kservice.o(i.rt_strcmp), (24 bytes).
+    Removing kservice.o(i.rt_strdup), (36 bytes).
+    Removing kservice.o(i.rt_strncmp), (32 bytes).
+    Removing kservice.o(i.rt_strnlen), (20 bytes).
+    Removing kservice.o(i.rt_strstr), (54 bytes).
+    Removing kservice.o(i.rt_vsprintf), (12 bytes).
+    Removing kservice.o(.data), (4 bytes).
+    Removing mem.o(i.rt_calloc), (26 bytes).
+    Removing mem.o(i.rt_free_sethook), (12 bytes).
+    Removing mem.o(i.rt_malloc_sethook), (12 bytes).
+    Removing mem.o(i.rt_memory_info), (32 bytes).
+    Removing mem.o(i.rt_realloc), (204 bytes).
+    Removing object.o(i.rt_object_attach_sethook), (12 bytes).
+    Removing object.o(i.rt_object_detach_sethook), (12 bytes).
+    Removing object.o(i.rt_object_find), (76 bytes).
+    Removing object.o(i.rt_object_get_type), (8 bytes).
+    Removing object.o(i.rt_object_put_sethook), (12 bytes).
+    Removing object.o(i.rt_object_take_sethook), (12 bytes).
+    Removing object.o(i.rt_object_trytake_sethook), (12 bytes).
+    Removing object.o(i.rt_system_object_init), (2 bytes).
+    Removing scheduler.o(i.rt_critical_level), (12 bytes).
+    Removing scheduler.o(i.rt_scheduler_sethook), (12 bytes).
+    Removing thread.o(i.rt_thread_control), (100 bytes).
+    Removing thread.o(i.rt_thread_delete), (64 bytes).
+    Removing thread.o(i.rt_thread_detach), (84 bytes).
+    Removing thread.o(i.rt_thread_find), (84 bytes).
+    Removing thread.o(i.rt_thread_inited_sethook), (12 bytes).
+    Removing thread.o(i.rt_thread_mdelay), (14 bytes).
+    Removing thread.o(i.rt_thread_resume_sethook), (12 bytes).
+    Removing thread.o(i.rt_thread_suspend_sethook), (12 bytes).
+    Removing timer.o(i.rt_timer_create), (46 bytes).
+    Removing timer.o(i.rt_timer_delete), (32 bytes).
+    Removing timer.o(i.rt_timer_enter_sethook), (12 bytes).
+    Removing timer.o(i.rt_timer_exit_sethook), (12 bytes).
+    Removing timer.o(i.rt_timer_next_timeout_tick), (12 bytes).
+    Removing cpuport.o(i.rt_hw_cpu_reset), (16 bytes).
+    Removing cpuport.o(i.rt_hw_cpu_shutdown), (24 bytes).
+    Removing cpuport.o(i.rt_hw_exception_install), (12 bytes).
+
+320 unused section(s) (total 14572 bytes) removed from the image.
